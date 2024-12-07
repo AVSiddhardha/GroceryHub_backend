@@ -1,223 +1,375 @@
 <!DOCTYPE html>
-<style>
-  body {
-    background-color: lightgray;
-    hr {
-      border: 3px solid black;
-    }
+<html>
+  <head>
+    <style>
+      body {
+  background-color: lightgray;
+  hr {
+    border: 3px solid black;
+    width: 100%;
   }
-  
-  .vline {
-    width: 3px;
-    height: 80%;
-    background-color: black;
-    float: inline-start;
-    margin: 1%;
-  }
-  
-  nav {
-    width: 180px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgb(227, 190, 190);
-    img {
-      width: 20px;
-      margin: 10px;
-    }
-  }
-  
-  .aboutme {
-    h1{
-  font-size: 60px;
-  text-align: center;
 }
-    height: 250px;
-    padding: 50px;
-    background: linear-gradient(to bottom,  rgb(255, 255, 255), #a3c6d4);
 
+.vline {
+  width: 3px;
+  height: 80%;
+  background-color: black;
+  float: inline-start;
+  margin: 1%;
+}
 
+.grid-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.1fr 0.1fr 0.01fr 1fr 0.01fr 1fr 0.01fr 1fr 0.01fr 1fr 0.01fr 0.1fr 0.6fr 0.01fr 0.1fr;
+  grid-template-areas:
+    "header header header header header header header header header header header header"
+    "nav nav nav nav nav nav nav nav nav nav nav nav"
+    "hr1 hr1 hr1 hr1 hr1 hr1 hr1 hr1 hr1 hr1 hr1 hr1"
+    " aboutme aboutme aboutme aboutme aboutme aboutme aboutme aboutme myimage myimage myimage myimage"
+    "hr2 hr2 hr2 hr2 hr2 hr2 hr2 hr2 hr2 hr2 hr2 hr2"
+    "exp exp exp exp exp exp skills skills skills skills skills skills"
+    "hr3 hr3 hr3 hr3 hr3 hr3 hr3 hr3 hr3 hr3 hr3 hr3"
+    "edu edu edu edu edu edu edu edu edu edu edu edu"
+    "hr4 hr4 hr4 hr4 hr4 hr4 hr4 hr4 hr4 hr4 hr4 hr4"
+    "blogs blogs blogs blogs blogs cer cer cer cer cer cer cer"
+    "hr5 hr5 hr5 hr5 hr5 hr5 hr5 hr5 hr5 hr5 hr5 hr5"
+    " prjhead prjhead prjhead prjhead prjhead prjhead prjhead prjhead prjhead prjhead prjhead prjhead"
+    "prj1 prj1 prj1 prj2 prj2 prj2 prj3 prj3 prj3 prj4 prj4 prj4 "
+    "hr6 hr6 hr6 hr6 hr6 hr6 hr6 hr6 hr6 hr6 hr6 hr6"
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
+}
+
+.hr1 {
+  grid-area: hr1;
+}
+.hr2 {
+  grid-area: hr2;
+}
+.hr3 {
+  grid-area: hr3;
+}
+.hr4 {
+  grid-area: hr4;
+}
+.hr5 {
+  grid-area: hr5;
+}
+.hr6 {
+  grid-area: hr6;
+}
+
+.header{
+  grid-area: header;
+  background-color: azure;
+  text-align: center;
+  margin-bottom: 5px;
+}
+nav {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(227, 190, 190);
+  width: 180px;
+  grid-area: nav;
+  img {
+    width: 20px;
+    margin: 10px;
   }
-  .aboutmecontent {
-    h3{
-        font-size: 30px;
-        text-align: center;
-      }
-    width: 950px;
+}
+
+.aboutmecontent {
+  background: linear-gradient(to bottom,  rgb(255, 255, 255), #a3c6d4);
+  grid-area: aboutme;
+  padding: 50px;
+  h1 {
+    font-size: 60px;
+    text-align: center;
+  }
+  h3 {
+    font-size: 30px;
+    text-align: center;
+  }
+}
+.myimage {
+  background: linear-gradient(to bottom,  rgb(255, 255, 255), #a3c6d4);
+  grid-area: myimage;
+  
+  img {
+    width: 250px;
+    padding: 50px;
+    margin-left: 120px;
+  }
+}
+
+.experience {
+  grid-area: exp;
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255),
+    rgb(219, 189, 177)
+  );
+  h2 {
+    text-align: center;
+  }
+  img {
+    width: 50px;
+    float: inline-start;
+    margin-top: 10px;
+    margin-left: 25px;
+  }
+  span {
+    width: 600px;
+    float: inline-start;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+}
+.skills {
+  
+  grid-area: skills;
+  background: rgb(214, 215, 196);
+  h2 {
+    text-align: center;
+  }
+  img {
+    width: 50px;
+    margin-top: 20px;
+    float: inline-start;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  span {
+    margin-top: 20px;
+    float: inline-start;
+    width: 600px;
+  }
+}
+
+.education {
+  grid-area: edu;
+  padding: 10px;
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255),
+    rgb(181, 207, 192)
+  );
+  h2 {
+    text-align: center;
+  }
+  img {
+    width: 50px;
+    float: inline-start;
+    margin: 20px 50px 0px 50px;
+  }
+  a {
+    width: 1200px;
+    margin: 20px;
     float: inline-start;
   }
-  .myimage {
-    float: inline-end;
-    margin-right: 150px;
-    img {
-      width: 250px;
+}
+
+.blogs {
+  background: rgb(198, 193, 217);
+  grid-area: blogs;
+  border-right: 3px solid black;
+  h2 {
+    text-align: center;
+  }
+}
+
+.blog {
+  height: 130px;
+  img {
+    width: 100px;
+    float: inline-start;
+  }
+  span {
+    width: 500px;
+    float: inline-start;
+  }
+}
+.certification {
+  grid-area: cer;
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255),
+    rgb(208, 188, 209)
+  );
+  h3 {
+    text-align: center;
+  }
+}
+.cer {
+  height: 268px;
+}
+.certificate {
+  float: inline-start;
+  width: 200px;
+  margin-left: 30px;
+  padding: 10px;
+  a {
+    float: left;
+  }
+  img {
+    width: 100px;
+    margin-left: 30px;
+  }
+}
+#prjhead{
+  grid-area: prjhead;
+  margin: 0px;
+  background: rgb(185, 182, 179);
+}
+.project {
+  background: rgb(185, 182, 179);
+  
+  float: inline-start;
+
+  img {
+    width: 100px;
+    margin-left: 100px;
+  }
+  span {
+    float: left;
+  }
+}
+#project1 {
+  grid-area: prj1;
+}
+#project2 {
+  grid-area: prj2;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  padding-left: 20px;
+}
+#project3 {
+  grid-area: prj3;
+  border-right: 2px solid black;
+}
+#project4 {
+  grid-area: prj4;
+}
+
+footer {
+  grid-area: footer;
+  width: 180px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(227, 190, 190);
+  img {
+    width: 20px;
+    margin: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    div {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    hr {
+      margin: 0px;
     }
   }
-  
-  .content {
-    height: 300px;
+  .vline {
+    display: none;
+  }
+  .grid-box {
+    grid-template-columns: auto;
+    grid-template-rows: 0.1fr 0.1fr 0.001fr 1fr 0.5fr 0.001fr 0.7fr 0.7fr 0.001fr 0.8fr 0.001fr 0.6fr 0.9fr 0.001fr 0.1fr 0.3fr 0.3fr 0.3fr 0.3fr 0.001fr 0.1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "hr1"
+      "aboutme"
+      "myimage"
+      "hr2"
+      "exp"
+      "skills"
+      "hr3"
+      "edu"
+      "hr4"
+      "blogs"
+      "cer"
+      "hr5"
+      "prjhead"
+      "prj1"
+      "prj2"
+      "prj3"
+      "prj4"
+      "hr6"
+      "footer";
+  }
+
+  .myimage {
+    width: 600px;
+    padding-left: 0px;
+    
   }
   .experience {
-    h2{
-        text-align: center;
-    }
-    float: inline-start;
-    width: 750px;
-    background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(219, 189, 177));
-    img {
-      width: 50px;
-      float: inline-start;
-      margin-top: 10px;
-      margin-left: 25px;
-    }
-    span {
-        width: 600px;
-        float: inline-start;
-        margin-top: 20px;
-        margin-left: 20px;
-      }
-  }
-  .skills {
-    h2{
-        text-align: center;
-    }
-    float: inline-start;
-    width: 700px;
-    background: rgb(214, 215, 196);
-    img {
-      width: 50px;
-      margin-top: 20px;
-      float: inline-start;
-      margin-left: 20px;
-      margin-right: 20px;
-    }
-    span {
-      margin-top: 20px;
-      float: inline-start;
-      width: 600px;
-    }
-  }
-  
-  .education {
-    h2{
-        text-align: center;
-    }
-    height: 260px;
-    padding: 10px;
-    background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(181, 207, 192));
-    img {
-      width: 50px;
-      float: inline-start;
-      margin: 20px 50px 0px 50px;
-    }
-    a {
-      width: 1200px;
-      margin: 20px;
-      float: inline-start;
-    }
-  }
-  
-  .content2 {
-    height: 320px;
-    width: 1500px;
-  }
-  .blogs {
-    h2{
-        text-align: center;
-    }
-    float: inline-start;
-  }
-  
-  .blog {
-    height: 130px;
-    background: rgb(198, 193, 217);
-    img {
-      width: 100px;
-      float: inline-start;
-    }
     span {
       width: 500px;
-      float: inline-start;
     }
+  }
+  .skills {
+    border-top: 4px solid black;
+    span {
+      width: 500px;
+    }
+  }
+  .education {
+    a {
+      width: 500px;
+    }
+  }
+  .blogs {
+    border: none;
+    padding: 10px;
   }
   .certification {
-    h3{
-        text-align: center;
-    }
-    float: inline-start;
-    width: 865px;
-  }
-  .cer {
-    height: 268px;
-    background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(208, 188, 209));
+    border-top: 4px solid black;
   }
   .certificate {
-    float: inline-start;
-    width: 200px;
-    margin-left: 30px;
-    padding: 10px;
-    a {
-      float: left;
-    }
-    img {
-      width: 100px;
-      margin-left: 30px;
-    }
-  }
-  
-  .projects {
-    height: 250px;
-    background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(196, 183, 164));
+    width: 500px;
+    margin-left: 0px;
   }
   .project {
-    width: 325px;
-    float: inline-start;
     padding: 10px;
-    margin-top: 10px;
-    img {
-      width: 100px;
-      margin-left: 100px;
-    }
-    span {
-      float: left;
-    }
-  }
-  
-  footer {
-    width: 180px;
+    border: none !important;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(227, 190, 190);
-    img {
-      width: 20px;
-      margin: 10px;
-    }
   }
-  
-</style>
-<html>
+}
+
+    </style>
+  </head>
   <body>
-    <nav>
-      <a href="#abotme">
-        <img
-          src="https://cdn-icons-png.freepik.com/256/1077/1077114.png?ga=GA1.1.1861806169.1727239895&semt=ais_hybrid"
-      /></a>
-      <a href="#education">
-        <img
-          src="https://cdn-icons-png.freepik.com/256/7720/7720109.png?ga=GA1.1.1861806169.1727239895&semt=ais_hybrid"
-      /></a>
-      <a href="#projects">
-        <img
-          src="https://cdn-icons-png.freepik.com/256/10297/10297159.png?ga=GA1.1.1861806169.1727239895&semt=ais_hybrid"
-      /></a>
-      <a href="#blogs"
-        ><img
-          src="https://cdn-icons-png.freepik.com/256/12276/12276796.png?ga=GA1.1.1861806169.1727239895&semt=ais_hybrid"
-        />
-      </a>
-    </nav>
-    <hr />
-    <div class="aboutme" id="aboutme">
-      <div class="aboutmecontent">
+    <div class="grid-box">
+      <header class="header">
+        <h3>Hi! This is my portfolio</h3>
+      </header>
+      <nav>
+        <a href="#abotme">
+          <img
+            src="https://cdn-icons-png.freepik.com/256/1077/1077114.png?ga=GA1.1.1861806169.1727239895&semt=ais_hybrid"
+        /></a>
+        <a href="#education">
+          <img
+            src="https://cdn-icons-png.freepik.com/256/7720/7720109.png?ga=GA1.1.1861806169.1727239895&semt=ais_hybrid"
+        /></a>
+        <a href="#projects">
+          <img
+            src="https://cdn-icons-png.freepik.com/256/10297/10297159.png?ga=GA1.1.1861806169.1727239895&semt=ais_hybrid"
+        /></a>
+        <a href="#blogs"
+          ><img
+            src="https://cdn-icons-png.freepik.com/256/12276/12276796.png?ga=GA1.1.1861806169.1727239895&semt=ais_hybrid"
+          />
+        </a>
+      </nav>
+      <hr class="hr1" />
+      <section class="aboutmecontent">
         <h1>Alla Venkata Siddhardha</h1>
         <h3>About Me</h3>
         <a
@@ -226,19 +378,16 @@
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat. Duis aute irure dolor in
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui</a
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt </a
         >
-      </div>
-      <div class="myimage">
+      </section>
+      <section class="myimage">
         <img
           src="https://media.licdn.com/dms/image/v2/D4E03AQELYqX-C4uD2Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731384812869?e=1738800000&v=beta&t=QbEow6NHM_mRPMK0UQhm-6yWS-DZGmNoKt0WHGauHf4"
         />
-      </div>
-    </div>
-    <hr />
-    <div class="content">
-      <div class="experience">
+      </section>
+      <hr class="hr2" />
+      <section class="experience">
         <h2>Experience</h2>
         <span
           >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -264,10 +413,8 @@
         ><img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSuLwaTvggsTmPhZ1op_qatz8v5lC4ScZmzdA&s="
         />
-      </div>
-
-      <div class="vline"></div>
-      <div class="skills">
+      </section>
+      <section class="skills">
         <h2>Skills</h2>
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSq_yyrU6Te8hNA3XeWKYTk2L-e4dzQaO6vFQ&s="
@@ -277,8 +424,6 @@
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
         </span>
-      </div>
-      <div class="skills">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRDckuHXKrle_Rnw81-W2l5yFBusJQHCw5BSw&s="
         /><span
@@ -287,8 +432,6 @@
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
         </span>
-      </div>
-      <div class="skills">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBmiu-Igdh9xXgCIRyGjm3H8SBy4u6sALy9w&s="
         /><span
@@ -297,37 +440,35 @@
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
         </span>
-      </div>
-    </div>
-    <hr />
-    <div class="education" id="education">
-      <h2>Education</h2>
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSASCsyf0gv_FPMUBpS1K7YidCrP7P1SX2CjA&s="
-      /><a
-        >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.</a
-      >
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRM49DjU8UbS2gi2TcPBl2EDGxd44wjdHnAUg&s="
-      /><a
-        >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.</a
-      >
-    </div>
-    <hr />
-    <div class="content2">
-      <div class="blogs" id="blogs">
+      </section>
+      <hr class="hr3" />
+      <section class="education" id="education">
+        <h2>Education</h2>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSASCsyf0gv_FPMUBpS1K7YidCrP7P1SX2CjA&s="
+        /><a
+          >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.</a
+        >
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRM49DjU8UbS2gi2TcPBl2EDGxd44wjdHnAUg&s="
+        /><a
+          >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.</a
+        >
+      </section>
+      <hr class="hr4" />
+      <section class="blogs" id="blogs">
         <h2>Blogs</h2>
         <div class="blog">
           <img
@@ -345,9 +486,8 @@
             eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
           >
         </div>
-      </div>
-      <div class="vline"></div>
-      <div class="certification">
+      </section>
+      <section class="certification">
         <h3>Certification</h3>
         <div class="cer">
           <div class="certificate">
@@ -380,13 +520,11 @@
             >
           </div>
         </div>
-      </div>
-    </div>
-
-    <hr />
-    <h2>Projects</h2>
-    <div class="projects" id="projects">
-      <div class="project">
+      </section>
+      <hr class="hr5" />
+      <h3 id="prjhead">PROJECTS</h3>
+      <section class="project" id="project1">
+        
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT9CkheDqAsYFdsrPLBYrXKDB7hFo2RCkuYig&s="
         /><span
@@ -395,9 +533,8 @@
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.</span
         >
-      </div>
-      <div class="vline"></div>
-      <div class="project">
+      </section>
+      <section class="project" id="project2">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSdXxKB5cv7-ohfCmk2BSPrfFrMHdGVhOKS_w&s="
         /><span
@@ -406,9 +543,8 @@
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.</span
         >
-      </div>
-      <div class="vline"></div>
-      <div class="project">
+      </section>
+      <section class="project" id="project3">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT1fyZbekQtEGCHV7F5IVPV6OsTR78NMjDfyQ&s="
         /><span
@@ -417,9 +553,8 @@
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.</span
         >
-      </div>
-      <div class="vline"></div>
-      <div class="project">
+      </section>
+      <section class="project" id="project4">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRnymBWQ0nqT0NrmIuDZYlnnz8VpMT1XRzSyg&s="
         /><span
@@ -428,18 +563,20 @@
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.</span
         >
-      </div>
+      </section>
+      <hr class="hr6" />
+      <footer class="menu" id="footer">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+        />
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" />
+        <img
+          src="https://mailmeteor.com/logos/assets/PNG/Gmail_Logo_512px.png"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png"
+        />
+      </footer>
     </div>
-    <hr />
-    <footer class="menu" id="footer">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-      />
-      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" />
-      <img src="https://mailmeteor.com/logos/assets/PNG/Gmail_Logo_512px.png" />
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png"
-      />
-    </footer>
   </body>
 </html>
